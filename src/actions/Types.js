@@ -1,0 +1,34 @@
+export const SIGNIN = "SIGNIN"
+export const SIGNUP = "SIGNUP"
+export const LOGOUT ="LOGOUT"
+export const PASSWORD_RESET = "PASSWORD_RESET"
+export const SET_LOADING = "SET_LOADING"
+export const CANCEL_LOADING = "CANCEL_LOADING"
+
+
+export const ADD_PRODUCT = "ADD_PRODUCT"
+export const GET_PRODUCT = "GET_PRODUCT"
+export const PAYMENT = "PAYMENT"
+export const GET_LOGISTICS = "GET_LOGISTICS"
+
+export const SETDATA_LOADING = "SETDATA_LOADING"
+export const CANCELDATA_LOADING = "CANCELDATA_LOADING"
+
+
+
+export const NEW_MESSAGE = "NEW_MESSAGE"
+export const CLEAR_MESSAGE = "CLEAR_MESSAGE"
+
+
+export const ADD_LOCATION = "ADD_lOCATION"
+export const ADD_CURRENT_LOCATION = "ADD_CURRENT_LOCATION"
+export const START_RECORDING = "START_RECORDING"
+export const STOP_RECORDING = "STOP_RECORDING"
+export const RESET = "RESET"
+export const UPLOADPATH = "UPLOADPATH"
+
+
+export const RESET_STATES = "RESET_STATES"
+
+
+
