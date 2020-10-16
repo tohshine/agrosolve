@@ -1,4 +1,4 @@
-import "../../_mockLocation";
+//import "../../_mockLocation";
 import React, { useEffect, useCallback } from "react";
 import { StyleSheet, BackHandler, ToastAndroid } from "react-native";
 import { ResponseMessage } from "../../components/serverMsg";
@@ -35,10 +35,13 @@ const mapTracking = ({
   const { message } = ResponseMessage(messages);
 
   const callback = useCallback(
-    (location) => addLocation(recording, location)[recording]
-  ); 
+    (location) => {
+      addLocation(recording, location);
+    },
+    [recording]
+  );
 
-  const { err } = useLocation(recording,callback);
+  const { err } = useLocation(recording, callback);
 
   const toastMessage = () => {
     return ToastAndroid.show(

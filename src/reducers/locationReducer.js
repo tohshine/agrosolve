@@ -24,6 +24,7 @@ export const locationReducer = (state = initialState, action) => {
       return {
         ...state,
         location: [],
+      
       };
     case STOP_RECORDING:
       return {

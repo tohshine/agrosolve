@@ -21,7 +21,7 @@ const Dashboard = ({ navigation, _GetProduct, product }) => {
   const data = [
     {
       name: "P",
-      title: "Product",
+      title: "Marketing",
       route: "productFlow",
       icon: require("../../assets/product.png"),
     },
@@ -33,7 +33,7 @@ const Dashboard = ({ navigation, _GetProduct, product }) => {
     },
     {
       name: "T",
-      title: "Training",
+      title: "Learning portal",
       route: "lecture",
       icon: require("../../assets/lecture.png"),
     },
@@ -137,7 +137,8 @@ const Dashboard = ({ navigation, _GetProduct, product }) => {
             Guest
           </Text>
         </Text>
-        <Avatar
+       <TouchableOpacity onPress={()=>navigation.navigate("account")}>
+       <Avatar
           rounded
           icon={{ name: "user", type: "font-awesome" }}
           title='img'
@@ -147,6 +148,7 @@ const Dashboard = ({ navigation, _GetProduct, product }) => {
               "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg",
           }}
         />
+       </TouchableOpacity>
       </Block>
 
       <Block

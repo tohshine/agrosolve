@@ -6,14 +6,11 @@ import { Avatar, Accessory } from "react-native-elements";
 import { theme,icons } from "../../constants";
 import { connect } from "react-redux";
 import { _ImagePermissions } from "../../_permissions";
-
 import * as ImagePicker from "expo-image-picker";
-
-
-
 import { _AddProduct } from "../../actions/productAction";
-
 import {ResponseMessage} from '../../components/serverMsg'
+import {HeaderNav} from '../../components/headerNav'
+
 
 const Create = ({ navigation, serverMsg, _AddProduct, _loading }) => {
   const [image, setimage] = useState(null);
@@ -77,8 +74,10 @@ const {message} = ResponseMessage(serverMsg)
 
  
   return (
-    <Block padding={theme.sizes.base}>
-      
+    <Block flex={1} padding={theme.sizes.base}>
+      <HeaderNav>
+        {icons.backArrow("productFlow")}
+      </HeaderNav>
       <Text h1 bold>
         Create{" "}
         <Text color='green' h1 bold>

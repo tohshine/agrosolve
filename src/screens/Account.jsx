@@ -73,12 +73,13 @@ const logoutAccount = ()=>{
             Edit Profile
           </Text>
         </Button>
-        <Button style={styles.buttonContainer}>
+        <Button style={styles.buttonContainer} onPress={()=>navigation.navigate("create")}>
           <Text center color={theme.colors.accent}>
             Add Product
           </Text>
         </Button>
       </Block>
+      <Text caption color={theme.colors.gray} center>This is just for  demostration ,this application hasnt reach its full functionality</Text>
     </Block>
   );
 };

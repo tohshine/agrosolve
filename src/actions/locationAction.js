@@ -11,13 +11,12 @@ import {
 
 export const addLocation = (recording, location) => (dispatch) => {
   if (recording) {
-    console.log("Tracking");
     dispatch({
       type: ADD_LOCATION,
       payload: location,
     });
   }
-  console.log(recording);
+  
   dispatch({
     type: ADD_CURRENT_LOCATION,
     payload: location,
@@ -25,7 +24,6 @@ export const addLocation = (recording, location) => (dispatch) => {
 };
 
 export const uploadLocationPath = (locationData) => async (dispatch) => {
-  console.log(locationData);
   try {
     const { data } = await UploadAPI.patch("/logistics", { ...locationData });
     dispatch(getMessage(data, data.status));

@@ -1,8 +1,13 @@
 // just copy this code from the driving repo :)
 import React, { Component } from "react";
-import { Text, StyleSheet } from "react-native";
+import { Text, StyleSheet,Dimensions } from "react-native";
 
 import { theme } from "../constants";
+
+const width = Dimensions.get('screen').width
+
+//calculate font size upon screeen size
+const screenFont = width/theme.sizes.font
 
 export default class Typography extends Component {
   render() {
@@ -111,9 +116,10 @@ export default class Typography extends Component {
 }
 
 const styles = StyleSheet.create({
+  
   // default style
   text: {
-    fontSize: theme.sizes.font,
+    fontSize: width/screenFont,
     color: theme.colors.black,
   },
   // variations
