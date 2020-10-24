@@ -17,7 +17,6 @@ import { NavigationEvents } from "react-navigation";
 const { width } = Dimensions.get("window");
 
 const Dashboard = ({ navigation, _GetProduct, product }) => {
-
   const data = [
     {
       name: "P",
@@ -48,6 +47,7 @@ const Dashboard = ({ navigation, _GetProduct, product }) => {
     return data.map((d) => {
       return (
         <TouchableOpacity
+          activeOpacity={0.8}
           key={d.route}
           onPress={() => navigation.navigate(`${d.route}`)}
         >
@@ -120,39 +120,34 @@ const Dashboard = ({ navigation, _GetProduct, product }) => {
   return (
     <Block flex={1}>
       <NavigationEvents onWillFocus={_GetProduct} />
-      <Block flex={false} row margin={[0, theme.sizes.base/1.5]}>
+      <Block flex={false} row margin={[0, theme.sizes.base / 1.5]}>
         <Label green />
         <Label teal />
         <Label red />
       </Block>
-      <Block
-        flex={false}
-        row
-        space='between'
-        margin={[0, theme.sizes.base]}
-      >
+      <Block flex={false} row space='between' margin={[0, theme.sizes.base]}>
         <Text h1 bold>
           Hi,{" "}
           <Text color='yellow' h1 bold>
             Guest
           </Text>
         </Text>
-       <TouchableOpacity onPress={()=>navigation.navigate("account")}>
-       <Avatar
-          rounded
-          icon={{ name: "user", type: "font-awesome" }}
-          title='img'
-          size='small'
-          source={{
-            uri:
-              "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg",
-          }}
-        />
-       </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("account")}>
+          <Avatar
+            rounded
+            icon={{ name: "user", type: "font-awesome" }}
+            title='img'
+            size='small'
+            source={{
+              uri:
+                "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg",
+            }}
+          />
+        </TouchableOpacity>
       </Block>
 
       <Block
-        margin={[0, theme.sizes.base]}
+        margin={[theme.sizes.base * 3, theme.sizes.base]}
         flex={0.8}
         row
         middle

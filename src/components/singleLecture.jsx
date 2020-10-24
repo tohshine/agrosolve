@@ -5,10 +5,9 @@ import { theme } from "../constants";
 
 const lectureList = () => {
   return (
-    <Card border flex={false} margin={[theme.sizes.base,0]} style={styles.cardContainer}>
-      <Text h1 bold>card Title</Text>
-      <Text caption>card subtitle</Text>
-    </Card>
+    <Block center  border  margin={[theme.sizes.base,0]} >
+      <Text bold>coming soon...</Text>
+    </Block >
   );
 };
 

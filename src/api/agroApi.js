@@ -3,9 +3,9 @@ import { AsyncStorage } from "react-native";
 
 let url;
 if (__DEV__) {
-  url = "http://c50c835fd144.ngrok.io";
+  url = "http://8741422758d6.ngrok.io";
 } else {
-  url: "";
+  url = "http://8741422758d6.ngrok.io";
 }
 
 //creating instance

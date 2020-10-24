@@ -1,5 +1,5 @@
 import React from "react";
-import {icons} from '../constants'
+import { icons } from "../constants";
 
 import { createBottomTabNavigator } from "react-navigation-tabs";
 import { createAppContainer, createSwitchNavigator } from "react-navigation";
@@ -22,9 +22,7 @@ import viewLogistics from "../screens/logistics/viewLogistics";
 import logisticeTracking from "../screens/logistics/logisticeTracking";
 import LectureList from "../screens/lecture/index";
 import LecutureDetails from "../screens/lecture/LectureDetails";
-import BlackScreen from '../screens/_blankScreen'
-
-
+import BlackScreen from "../screens/_blankScreen";
 
 const productFlow = createStackNavigator({
   products: indexProduct,
@@ -35,45 +33,40 @@ const productFlow = createStackNavigator({
 productFlow.navigationOptions = {
   title: "product",
   tabBarIcon: icons.Tree,
-  
 };
 
-
 const createNavigation = createSwitchNavigator({
-  blackscreen:BlackScreen,
+  blackscreen: BlackScreen,
   splashscreen: Splashscreen,
   authFlow: createStackNavigator({
     signin: Signin,
     signup: Signup,
     reset: ForgotEmailPassword,
   }),
-  mainFlow: createStackNavigator({
-    dashboard: Dashboard,
-    account: Account,
-    lecture: createStackNavigator({
-      list: LectureList,
-      details: LecutureDetails,
-    }),
-    product: createBottomTabNavigator({
-      productFlow,
-      order: OrderedProduct,
-      create: CreateProduct,
-    }),
-    logistics: createStackNavigator({
-       listLogistics,
-       logisticeTracking,
-       viewLogistics
-    }),
-    
-  },
-  //?setting all header to none hosted inside stack
-  {
-    headerMode:false
-  }
-  
+  mainFlow: createStackNavigator(
+    {
+      dashboard: Dashboard,
+      account: Account,
+      lecture: createStackNavigator({
+        list: LectureList,
+        details: LecutureDetails,
+      }),
+      product: createBottomTabNavigator({
+        productFlow,
+        order: OrderedProduct,
+        create: CreateProduct,
+      }),
+      logistics: createStackNavigator({
+        listLogistics,
+        logisticeTracking,
+        viewLogistics,
+      }),
+    },
+    //?setting all header to none hosted inside stack
+    {
+      headerMode: false,
+    }
   ),
-  
 });
-
 
 export default createAppContainer(createNavigation);

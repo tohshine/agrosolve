@@ -3,14 +3,13 @@ import { StyleSheet, ScrollView, ActivityIndicator } from "react-native";
 
 import { Text, Block, Button, Input } from "../../utilities";
 import { Avatar, Accessory } from "react-native-elements";
-import { theme,icons } from "../../constants";
+import { theme, icons } from "../../constants";
 import { connect } from "react-redux";
 import { _ImagePermissions } from "../../_permissions";
 import * as ImagePicker from "expo-image-picker";
 import { _AddProduct } from "../../actions/productAction";
-import {ResponseMessage} from '../../components/serverMsg'
-import {HeaderNav} from '../../components/headerNav'
-
+import { ResponseMessage } from "../../components/serverMsg";
+import { HeaderNav } from "../../components/headerNav";
 
 const Create = ({ navigation, serverMsg, _AddProduct, _loading }) => {
   const [image, setimage] = useState(null);
@@ -22,23 +21,20 @@ const Create = ({ navigation, serverMsg, _AddProduct, _loading }) => {
 
   const { getPermissionAsync, permissionStatus } = _ImagePermissions();
 
-useEffect(() => {
- getPermissionAsync()
+  useEffect(() => {
+    getPermissionAsync();
+  }, []);
 
-}, [])
+  const { message } = ResponseMessage(serverMsg);
 
-const {message} = ResponseMessage(serverMsg)
-  
-
-  const  _pickImage = async () => {
+  const _pickImage = async () => {
     if (permissionStatus.status !== "granted") return;
     try {
       let result = await ImagePicker.launchImageLibraryAsync({
         mediaTypes: ImagePicker.MediaTypeOptions.Images,
         allowsEditing: true,
         aspect: [4, 3],
-        quality:1
-        
+        quality: 1,
       });
       if (!result.cancelled) {
         setimage(result.uri);
@@ -72,19 +68,16 @@ const {message} = ResponseMessage(serverMsg)
     _AddProduct(formdata);
   };
 
- 
   return (
     <Block flex={1} padding={theme.sizes.base}>
-      <HeaderNav>
-        {icons.backArrow("productFlow")}
-      </HeaderNav>
+      <HeaderNav>{icons.backArrow("productFlow")}</HeaderNav>
       <Text h1 bold>
         Create{" "}
         <Text color='green' h1 bold>
           product
         </Text>
       </Text>
-     
+
       {message() || permissionStatus.message}
       <Block padding={[theme.sizes.base / 1.5, 0]} />
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -134,7 +127,7 @@ const {message} = ResponseMessage(serverMsg)
           onChangeText={setdesc}
           placeholder='product description'
           style={styles.textContainer}
-          multiline={true}
+          multiline
           numberOfLines={4}
           label='descriptions'
         />

@@ -1,13 +1,13 @@
 // just copy this code from the driving repo :)
 import React, { Component } from "react";
-import { Text, StyleSheet,Dimensions } from "react-native";
+import { Text, StyleSheet, Dimensions } from "react-native";
 
 import { theme } from "../constants";
 
-const width = Dimensions.get('screen').width
+const width = Dimensions.get("screen").width;
 
 //calculate font size upon screeen size
-const screenFont = width/theme.sizes.font
+const screenFont = width / theme.sizes.font;
 
 export default class Typography extends Component {
   render() {
@@ -59,8 +59,8 @@ export default class Typography extends Component {
       h3 && styles.h3,
       h4 && styles.h4,
       paragraph && styles.paragraph,
-      paragraph && color === 'gray' && styles.paragraphGray,
-      paragraph && color === 'gray2' && styles.paragraphGray2,
+      paragraph && color === "gray" && styles.paragraphGray,
+      paragraph && color === "gray2" && styles.paragraphGray2,
       title && styles.title,
       body && styles.body,
       caption && styles.caption,
@@ -90,20 +90,20 @@ export default class Typography extends Component {
       white && styles.white,
       gray && styles.gray,
       gray2 && styles.gray2,
-      color && color === 'blue' && styles.blue,
-      color && color === 'lightblue' && styles.lightblue,
-      color && color === 'green' && styles.green,
-      color && color === 'red' && styles.red,
-      color && color === 'yellow' && styles.yellow,
-      color && color === 'teal' && styles.teal,
-      color && color === 'black' && styles.black,
-      color && color === 'black2' && styles.black2,
-      color && color === 'black3' && styles.black3,
-      color && color === 'white' && styles.white,
-      color && color === 'gray' && styles.gray,
-      color && color === 'gray2' && styles.gray2,
-      color && color === 'gray3' && styles.gray3,
-      color && color === 'caption' && styles.caption,
+      color && color === "blue" && styles.blue,
+      color && color === "lightblue" && styles.lightblue,
+      color && color === "green" && styles.green,
+      color && color === "red" && styles.red,
+      color && color === "yellow" && styles.yellow,
+      color && color === "teal" && styles.teal,
+      color && color === "black" && styles.black,
+      color && color === "black2" && styles.black2,
+      color && color === "black3" && styles.black3,
+      color && color === "white" && styles.white,
+      color && color === "gray" && styles.gray,
+      color && color === "gray2" && styles.gray2,
+      color && color === "gray3" && styles.gray3,
+      color && color === "caption" && styles.caption,
       style, // rewrite predefined styles
     ];
 
@@ -116,10 +116,9 @@ export default class Typography extends Component {
 }
 
 const styles = StyleSheet.create({
-  
   // default style
   text: {
-    fontSize: width/screenFont,
+    fontSize: theme.sizes.font,
     color: theme.colors.black,
   },
   // variations
@@ -151,20 +150,20 @@ const styles = StyleSheet.create({
   white: { color: theme.colors.white },
   gray: { color: theme.colors.gray },
   gray2: { color: theme.colors.gray2 },
-  blue: { color: theme.colors.blue, },
-  lightblue: { color: theme.colors.lightblue, },
-  green: { color: theme.colors.green, },
-  red: { color: theme.colors.red, },
-  yellow: { color: theme.colors.yellow, },
-  teal: { color: theme.colors.teal, },
-  black: { color: theme.colors.black, },
-  black2: { color: theme.colors.black2, },
-  black3: { color: theme.colors.black3, },
-  white: { color: theme.colors.white, },
-  gray: { color: theme.colors.gray, },
-  gray2: { color: theme.colors.gray2, },
-  gray3: { color: theme.colors.gray3, },
-  caption: { color: theme.colors.caption, },
+  blue: { color: theme.colors.blue },
+  lightblue: { color: theme.colors.lightblue },
+  green: { color: theme.colors.green },
+  red: { color: theme.colors.red },
+  yellow: { color: theme.colors.yellow },
+  teal: { color: theme.colors.teal },
+  black: { color: theme.colors.black },
+  black2: { color: theme.colors.black2 },
+  black3: { color: theme.colors.black3 },
+  white: { color: theme.colors.white },
+  gray: { color: theme.colors.gray },
+  gray2: { color: theme.colors.gray2 },
+  gray3: { color: theme.colors.gray3 },
+  caption: { color: theme.colors.caption },
   // fonts
   h1: theme.fonts.h1,
   h2: theme.fonts.h2,
@@ -178,4 +177,3 @@ const styles = StyleSheet.create({
   caption: theme.fonts.caption,
   small: theme.fonts.small,
 });
-
